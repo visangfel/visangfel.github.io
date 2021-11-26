@@ -109,22 +109,24 @@ favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
   16: '/assets/logos/favicon@16px.ico'
 # 9. Site navigation
 navigation_header:
-- title: Home
-  url: /
-- title: Elements
-  url: /elements/
-- title: Blog
-  url: /blog/
-- title: Categories
-  url: /categories/
-- title: Search
-  url: /search/
-- title: Fork Alembic
-  url: https://github.com/daviddarnes/alembic
+  - title: Home
+    url: /
+  - title: 개발팀 소개
+    url: /elements/
+  - title: 모든 글
+    url: /blog/
+  - title: 카테고리별 글
+    url: /categories/
+  - title: 검색
+    url: /search/
+  - title: 개발자 채용
+    url: https://visang.recruiter.co.kr/app/jobnotice/list
+  - title: 개발 팀에 문의하기
+    url: https://github.com/daviddarnes/alembic
 
 navigation_footer:
-- title: Created by David Darnes
-  url: https://darn.es
+  - title: Created by Visangsatae
+    url: https://github.com/visangfel
 
 social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
   Twitter: https://twitter.com/DavidDarnes
