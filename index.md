@@ -1,8 +1,9 @@
 ---
-title: About Alembic
+title: About VISANGSATAE
 feature_text: |
-  ## Alembic
-  A Jekyll boilerplate theme designed to be a starting point for any Jekyll website
+  ## VISANGSATAE
+  비상 에듀테크 플랫폼의 기술을 공유합니다.  
+  개발팀에서 해결, 개선한 사항들을 나누고, 함께 자라길 원합니다.
 feature_image: "https://picsum.photos/1300/400?image=989"
 excerpt: "Alembic is a starting point for [Jekyll](https://jekyllrb.com/) projects. Rather than starting from scratch, this boilerplate is designed to get the ball rolling immediately. Install it, configure it, tweak it, push it."
 ---
