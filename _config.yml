@@ -89,13 +89,13 @@ defaults:
 # 7. Site settings
 encoding: utf-8 # Make sure the encoding is right
 lang: en-GB # Set the site language
-title: "Alembic" # Site name or title, also used in jekyll-seo-tag
+title: "비상사태 기술블로그" # Site name or title, also used in jekyll-seo-tag
 logo: "/assets/logos/favicon@16px.ico" # Site logo, also used in jekyll-seo-tag
-description: "Alembic is a starting point for Jekyll projects. Rather than starting from scratch, this boilerplate is designed to get the ball rolling immediately" # Site description and default description, also used in jekyll-seo-tag
-url: "https://alembic.darn.es" # Site url, also used in jekyll-seo-tag
+description: "비상교육 소속 백엔드 개발팀 '비상사태'입니다. 지속적인 기술 공유를 통해 개발 문화 개선을 이루어나가고 있습니다." # Site description and default description, also used in jekyll-seo-tag
+url: "https://visangfel.github.io/" # Site url, also used in jekyll-seo-tag
 baseurl: ""
-repo: "https://github.com/daviddarnes/alembic"
-email: "me@daviddarnes.com"
+repo: "https://github.com/visangfel/visangfel.github.io"
+email: "leebc@visang.com"
 # disqus: "alembic-1" # Blog post comments, uncomment the option and set the site ID from your Disqus account
 # date_format: "%-d %B %Y" # Blog post date formatting using placeholder formatting
 # google_analytics: ""
@@ -120,20 +120,18 @@ navigation_header:
   - title: 검색
     url: /search/
   - title: 개발자 채용
-    url: https://visang.recruiter.co.kr/app/jobnotice/list
+    url: /hire/
   - title: 개발 팀에 문의하기
     url: https://github.com/daviddarnes/alembic
+
+navbar-text-col: "#404040"
 
 navigation_footer:
   - title: Created by Visangsatae
     url: https://github.com/visangfel
 
 social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
-  Twitter: https://twitter.com/DavidDarnes
-  LinkedIn: https://www.linkedin.com/in/daviddarnes
-  GitHub: https://github.com/daviddarnes
-  link: https://darn.es
-  RSS: /feed.xml
+  GitHub: https://github.com/visangfel
 
 sharing_links: # Appear at the bottom of single blog posts, add as desired. The value can be 'true' or the desired button colour
   Twitter: "#0d94e7"

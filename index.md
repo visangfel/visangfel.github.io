@@ -2,10 +2,9 @@
 title: About VISANGSATAE
 feature_text: |
   ## VISANGSATAE
-  비상 에듀테크 플랫폼의 기술을 공유합니다.  
+  안녕하세요. 백엔드 개발팀 비상사태입니다.  
   개발팀에서 해결, 개선한 사항들을 나누고, 함께 자라길 원합니다.
-feature_image: "https://picsum.photos/1300/400?image=989"
-excerpt: "Alembic is a starting point for [Jekyll](https://jekyllrb.com/) projects. Rather than starting from scratch, this boilerplate is designed to get the ball rolling immediately. Install it, configure it, tweak it, push it."
+feature_image: "https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 ---
 
 Alembic is a starting point for [Jekyll](https://jekyllrb.com/) projects. Rather than starting from scratch, this boilerplate is designed to get rolling immediately. Install it, configure it, tweak it, push it.
