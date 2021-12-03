@@ -115,7 +115,7 @@ aside: true
     팀 전체 역량 증진을 위해 함께 주 1회 스터디를 진행하고 있습니다. 
   - 스터디 내용
     - 2020~: 스프링 프레임워크 기초~심화를 공부하였습니다.(자료: 백기선님의 인프런 강의)
-    - 2021.3~2021.10: 프레임워크의 동작원리와 리팩토링 방법을 공부했습니다. (자료: [자바 웹 프로그래밍 Next Step](https://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788997924240){:target="_blank"})
+    - 2021.3~2021.10: 프레임워크의 동작원리와 리팩토링 방법을 공부했습니다. (자료: [자바 웹 프로그래밍 Next Step](https://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788997924240){:target="_blank"}))
     - 2021.11~: MSA 서비스에 대해 스터디 중입니다. (자료: [Spring Cloud로 개발하는 마이크로서비스 애플리케이션(MSA)](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4){:target="_blank"})
 
 ## 마무리
@@ -129,5 +129,5 @@ aside: true
 제가 경험했던 좋은 팀문화를 더 많은 분들이 경험하길 바라며, 부족한 글솜씨이지만 열심히 소개글을 작성했습니다.  
 긴 글 끝까지 읽어주셔서 감사합니다. 
 
-여기까지 백엔드 개발 파트가 마음에 드셨다면 아래 **지원하기** 버튼을 통해 지원해주세요. 
-[지원하기](https://visang.recruiter.co.kr/app/jobnotice/view?systemKindCode=MRS2&jobnoticeSn=76346{:target="_blank"})
+여기까지 백엔드 개발 파트가 마음에 드셨다면 아래 **지원하기** 버튼을 통해 지원해주세요.  
+[지원하기](https://visang.recruiter.co.kr/app/jobnotice/view?systemKindCode=MRS2&jobnoticeSn=76346){:target="_blank"}
