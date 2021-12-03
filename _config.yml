@@ -119,7 +119,7 @@ navigation_header:
     url: /categories/
   - title: 검색
     url: /search/
-  - title: 개발자 채용
+  - title: 팀 소개 & 채용
     url: /hire/
   - title: 개발 팀에 문의하기
     url: https://github.com/daviddarnes/alembic
