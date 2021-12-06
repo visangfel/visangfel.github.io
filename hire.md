@@ -4,7 +4,6 @@ feature_text: |
   백엔드 개발자 채용 (JAVA)
 feature_image: "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 excerpt: "백엔드 개발자 채용 (JAVA)"
-aside: true
 ---
 
 안녕하세요. 비상사태팀 차다희입니다.  
