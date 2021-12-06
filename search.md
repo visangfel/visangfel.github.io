@@ -1,5 +1,5 @@
 ---
-title: 검색
+title: SEARCH
 excerpt: "게시물/메뉴 검색"
 ---
 

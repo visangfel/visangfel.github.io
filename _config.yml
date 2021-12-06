@@ -61,10 +61,12 @@ collections:
   posts:
     title: Posts # Needed for Siteleaf
     output: true
-    description: "My thoughts and ideas" # The post list page content
+    description: "팀에서 해결한 이슈들을 공유합니다." # The post list page content
     feature_text: |
-      Welcome to the blog
-    feature_image: "https://picsum.photos/2560/600?image=866"
+      ## VISANGSATAE
+      안녕하세요. 백엔드 개발팀 비상사태입니다.<br>
+      개발팀에서 해결, 개선한 사항들을 나누고, 함께 자라길 원합니다.
+    feature_image: "https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 
 # 6. Jekyll collections settings
 defaults:
@@ -109,21 +111,15 @@ favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
   16: '/assets/logos/favicon@16px.ico'
 # 9. Site navigation
 navigation_header:
-  - title: Home
+  - title: TECH
     url: /
-  - title: 개발팀 소개
+  - title: PEOPLE
     url: /elements/
-  - title: 모든 글
-    url: /blog/
-  - title: 카테고리별 글
-    url: /categories/
-  - title: 검색
-    url: /search/
-  - title: 팀 소개 & 채용
+  - title: HIRE
     url: /hire/
-  - title: 개발 팀에 문의하기
+  - title: CONTACT
     url: /contact/
-  - title: 검색
+  - title: SEARCH
     url: /search/
 
 navbar-text-col: "#404040"
