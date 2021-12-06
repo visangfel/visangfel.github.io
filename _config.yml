@@ -123,6 +123,8 @@ navigation_header:
     url: /hire/
   - title: 개발 팀에 문의하기
     url: /contact/
+  - title: 검색
+    url: /search/
 
 navbar-text-col: "#404040"
 
