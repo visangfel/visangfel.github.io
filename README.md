@@ -52,4 +52,4 @@
 본 블로그는 [Jekyll](https://jekyllrb.com/) 과 [GitHub Pages](https://pages.github.com/) 기반으로 동작합니다. 
 
 ### 블로그 테마
-[GitHub Pages](https://pages.github.com/)
+[Alembic](https://github.com/daviddarnes/alembic/)
