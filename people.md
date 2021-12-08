@@ -7,127 +7,45 @@ feature_image: "https://images.unsplash.com/photo-1518655048521-f130df041f66?ixl
 excerpt: 팀 소개
 ---
 
-안녕하세요. 비상사태팀 차다희입니다.  
-저희 팀은 비상교육 애듀테크 부서에서 **백엔드 개발**을 담당하고 있습니다.💪
-
-기존부터 꾸준한 성장세를 이어오던 사업이 최근 온라인 시장 확장에 따라 빠르게 성장하고 있습니다.👏👏  
-이에 발맞추어 저희도 **서비스의 확장 & 안정성**을 위해 개발자 채용을 시작했습니다.🙌
-
-성장 욕심이 많은 주니어 개발자부터 더 좋은 아키텍쳐를 고민하는 시니어 개발자까지 다양한 팀원들이 함께 협업하고 있는데요.   
-팀에서 프로세스를 정리하면서 우리 팀의 강점은 무엇일까 함께 논의한 결과,
-### 개인의 성장이 팀의 성장으로 이어지는 팀
-이라는 결론을 내렸습니다.
-
-함께 팀을 키워나갈 분들의 많은 지원 부탁 드립니다.
-
-## 직군 소개
-저희는 **24시간 장애 없는 서비스 환경**을 구축, **비즈니스 로직**을 개발하고 있습니다.  
-![team-intro.png](/assets/images/team-intro.png)  
-출처: https://cdn.arstechnica.net/wp-content/uploads/2017/03/workedin-1.jpg
-
-### 우리 팀이 개발하는 제품
-- 아이들이 재밌게 공부할 수 있는  
-  **학습 프로그램의 API**를 개발합니다.
-- 선생님, 학부모들이 수업 내용을 쉽게 관리할 수 있도록  
-  **LMS(Learning Management System)** 를 만듭니다.
-
-### 업무 방식
-- **JAVA 기반의 비즈니스 로직**을 개발합니다.
-- **관계형DB MariaDB**를 사용합니다.
-- 본사 CS 담당자들의 원활한 업무를 위해,  
-  기존에 수동으로 관리하던 부분을 **자동화**하고 있습니다.
-- 유지보수하기 쉽도록 레거시코드를 **점진적으로 리팩토링**합니다.
-- **실행 계획(Explain)** (+리더님의 명쾌한 Explain은 덤)을 사용하여 슬로우쿼리를 튜닝합니다.
-- CloudWatch, 팀 관제사이트(AKA '비상사태')를 통해 모든 이슈를 체크, 해결합니다
-
-### 팀의 강점
-- **현재에 안주하지 않고 더 나은 개발문화**를 위해 매일 노력합니다.  
-  최근에는 아래 2가지 작업을 수행하였습니다.
-- 📈모니터링 시스템을 자체 구축
-- ☁️IDC에서 AWS로 서비스를 이전
-
-## 기술 스택
-저희는 아래의 기술 스택을 사용하고 있습니다.
-- 언어&프레임워크: **JAVA** / **Spring, SpringBoot** / Maven
-- DB: **MariaDB**, MyBatis
-- 백오피스 프론트: JSP, ThymeLeaf, Jquery, JavaScript
-- 형상관리: Git, GitHub, GitLab
-- 배포: Jenkins
-- 모니터링: AWS CloudWatch, Zabbix
-- 인프라: AWS
-- IDE: IntelliJ
-- 이슈관리: MsTeams, Dooray
-
-## 자격 요건
-- Java 기반의 백엔드 개발 경험이 있으신 분
-- MySQL과 같은 관계형 데이터 베이스를 사용해보신 분
-- Linux의 기본 명령어 실행하실 수 있으신 분
-- 기본적 SQL 문법(JOIN, SubQuery) 등을 활용할 수 있으신 분
-- RDBMS의 인덱스를 이해하는 분
-- Git과 GitHub의 기본 사용법을 알고 계신 분
-
-## 우대조건
-*아래 조건은 필수가 아닙니다. 팀에서 함께 시도하실 분도 환영합니다.*
-- Restful API에 대한 설계나 개발 경험이 있으신 분
-- MVC Framework를 사용해보신 분
-- Layered Architecture를 경험하신 분
-- 개발 과정에서 테스트 코드를 작성하시는 분
-- 쿼리 튜닝 경험이 있으신 분
-- 장애 방지를 위해 프로세스 개선을 시도하신 분
-- 수동 작업으로 인한 시간 낭비를 막기 위해 자동화를 해보신 분
-- AWS 클라우드 경험이 있으신 분
-- 역량 강화를 위해 꾸준히 학습하신 분
-- 기획자, 디자이너 등 개발자가 아닌 분들께서 이해할 수 있는 언어로 쉽게 설명할 수 있는 분
-- 업무 내용을 지속적으로 문서화 하시는 분
-
-## 협업 방식
-빠르게 변화하는 에듀테크 시장에 대응하기 위해 저희는 아래와 같이 일하고 있습니다.
-
-- 협업툴 Dooray를 사용하여 이슈를 관리하고, 정책을 Wiki에 정리합니다.
-  - 담당자가 부재중일 경우, 다른 사람이 백업할 수 있도록 개발물은 wiki에 정리합니다.
-  - 장애 처리 로그, 개선 사항들을 정기 회의 시간에 공유하여, 팀 전체의 역량을 끌어올립니다.  
-    ![dooray-study.png](/assets/images/dooray-study.png)
-- 1주 단위로 업무 내역을 공유합니다.
-- Git Flow를 저희의 상황에 맞게 변형하여, Branch를 생성하고 Merge를 진행합니다.
-  - Master 브랜치에서 feature 생성, 이슈 처리
-  - Develop으로 Merge, 테스트 서버에서 기획자가 QA 진행
-  - Master로 Merge
-- Jenkins를 사용하여 매일 자동으로 배포합니다.
-- 텔레그램으로 시스템 이상에 대해 알람을 받고 즉각 대응합니다.
-- CloudWatch로 슬로우 쿼리를 모니터링하고, 튜닝한 쿼리는 Wiki에 기록합니다.  
-  ![slow-qurey-reports.png](/assets/images/slow-qurey-reports.png)
-
-## 팀 합류시 얻을 수 있는 이점
-수 많은 대기업과 유니콘 스타트업들과 비교하여 저희 팀이 가진 강점을 곰곰히 생각해보았습니다.  
-![avengers.png](/assets/images/avengers.png)  
-출처: https://memegenerator.net/img/instances/73370572.jpg
-- **다양한 도메인**을 경험할 수 있습니다.
-  - 큰 기업에서는 각 팀별로 하나의 도메인을 관리합니다.  
-    반면 저희 팀에서는 학습, 회원관리, 결제, 이벤트 등 서비스 전반을 다루고 있어, 팀에 합류하시면 백엔드 개발 전반을 익히실 수 있습니다.
-- **인프라**를 깊이 이해할 수 있습니다.
-  - 개발자가 인프라까지 이해할 경우 역량은 극대화됩니다. 저희 팀에서는 애플리케이션 개발뿐만 아니라 인프라 운영도 함께 경험하실 수 있습니다.
-- **레거시 개편 경험**을 얻으실 수 있습니다.
-  - 더 안정적인 서비스를 위해 코드를 지속적으로 리팩토링합니다.  
-    ![refactoring.png](/assets/images/refactoring.png)
-    *(리팩토링 만랩 팀장님)*
-- 팀원들이 자유롭게 스터디를 구성, **함께 공부**합니다.
-  - 혼자 공부하는 것이 얼마나 어려운지 알기에,  
-    팀 전체 역량 증진을 위해 함께 주 1회 스터디를 진행하고 있습니다.
-  - 스터디 내용
-    - 2020~: 스프링 프레임워크 기초~심화를 공부하였습니다.(자료: 백기선님의 인프런 강의)
-    - 2021.3~2021.10: 프레임워크의 동작원리와 리팩토링 방법을 공부했습니다. (자료: [자바 웹 프로그래밍 Next Step](https://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788997924240){:target="_blank"}))
-    - 2021.11~: MSA 서비스에 대해 스터디 중입니다. (자료: [Spring Cloud로 개발하는 마이크로서비스 애플리케이션(MSA)](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4){:target="_blank"})
-
-## 마무리
-글을 쓰는 저는 이제 3년차에 접어드는 주니어 개발자입니다.👶  
-첫 회사인만큼 많은 시행착오를 지난 2년간 겪었습니다.
-
-얼마전 *"10년 뒤 어떤 개발자가 되고 싶냐"* 라는 질문을 지인에게 받은 적이 있습니다. 저는 주저없이 *"제가 선배들에게 받았던 도움을 후배 개발자에게 배로 돌려주는 시니어 개발자가 되고 싶습니다"* 라고 답했습니다.
-
-팀 내 개선해야할 프로세스도 분명 존재하고, 미흡한 부분도 많습니다.  
-그럼에도 불구하고 제가 이 팀에 잘 적응하고, 성장할 수 있었던 함께 노력하는 개발 문화 덕분이었습니다.
-제가 경험했던 좋은 팀문화를 더 많은 분들이 경험하길 바라며, 부족한 글솜씨이지만 열심히 소개글을 작성했습니다.  
-긴 글 끝까지 읽어주셔서 감사합니다.
-
-여기까지 백엔드 개발 파트가 마음에 드셨다면 아래 **지원하기** 버튼을 통해 지원해주세요.  
-[지원하기](https://visang.recruiter.co.kr/app/jobnotice/view?systemKindCode=MRS2&jobnoticeSn=76346){:target="_blank"}
+<div class="about">
+    <div class="section">
+        <div class="group-wrapper">
+            <div class="group">
+                <div class="group-name">#대장 #리더</div>
+                <ul class="member">
+                    {% assign members = site.data.members | where: 'group', 'leader' | where_exp: 'member', 'member.drop != true' | sort: 'id' %}
+                    {% for member in members %}
+                        {% include about-member.html %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="group">
+                <div class="group-name">#인프라 #부대장</div>
+                <ul class="member">
+                    {% assign members = site.data.members | where: 'group', 'infra' | where_exp: 'member', 'member.drop != true' | sort: 'id' %}
+                    {% for member in members %}
+                        {% include about-member.html %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="group">
+                <div class="group-name">#기획자</div>
+                <ul class="member">
+                    {% assign members = site.data.members | where: 'group', 'planner' | where_exp: 'member', 'member.drop != true' | sort: 'id' %}
+                    {% for member in members %}
+                        {% include about-member.html %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="group">
+                <div class="group-name">#백엔드</div>
+                <ul class="member">
+                    {% assign members = site.data.members | where: 'group', 'backend' | where_exp: 'member', 'member.drop != true' | sort: 'id' %}
+                    {% for member in members %}
+                        {% include about-member.html %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

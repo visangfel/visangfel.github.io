@@ -18,6 +18,9 @@
     * jekyll 설치
     * 프로젝트 실행
 * 포스팅 작성법
+  * People
+    * 신규 입사자 추가
+    * 퇴사자 숨김처리
 * 블로그 환경 설정 방법
   * font 수정
   * 유용한 assets
@@ -25,6 +28,7 @@
 * 기타
     * 블로그 생성 도구 
     * 블로그 테마 
+    * Thanks to 
   
 ## 로컬에서 실행
 ### 1. 프로젝트 clone
@@ -50,6 +54,34 @@
 - 검색: search.md
 
 ## 포스팅 작성법
+### People 메뉴 작성법
+본 페이지는 팀원들을 소개하는 페이지입니다. 신규입사자/퇴사자에 대해 아래와 같이 설정해주세요.
+1. 신규입사자
+   1.1 `members.yml`에 프로필 작성
+   ```
+   예)
+   - id: chadh
+     name: 다희
+     emoji: 📚
+     comment: 매일 TIL(Today I learned)을 기록하며 성장하는 주니어 개발자입니다. 블로그 "기록요정"을 운영하고 있습니다.
+     group: backend
+   ```
+   1.2 `/about/img` 폴더에 사진 추가  
+   **⚠️ 사진은 1.1의 id와 동일하게 적어주셔야 people 페이지에서 정상 표시됩니다.**
+   
+
+2. 퇴사자
+   1.1 `members.yml`에서 drop:true 옵션 추가 
+   ```
+   예)
+   - id: chadh
+     name: 다희
+     emoji: 📚
+     comment: 매일 TIL(Today I learned)을 기록하며 성장하는 주니어 개발자입니다. 블로그 "기록요정"을 운영하고 있습니다.
+     group: backend
+     drop: true
+   ```
+### TECH 메뉴 작성법
 1. 포스팅은 마크다운 문법으로 작성합니다.  
 예) index.md 파일을 작성후 `jekyll serve` 실행시 `_site` 폴더 밑에 index.html이 생성됩니다.
    
@@ -78,3 +110,7 @@
 
 ### 블로그 테마
 [Alembic](https://github.com/daviddarnes/alembic/)
+
+### Thanks to
+1. [올리브영 개발팀의 기술 블로그](https://tech.oliveyoung.co.kr/) 와 [레파지토리](https://github.com/oy-alldev/oy-alldev.github.io) 를 주로 참고했습니다.  
+깔끔한 설명 감사합니다. 
