@@ -16,6 +16,8 @@ feature_image: "https://images.unsplash.com/photo-1518655048521-f130df041f66?ixl
 **레거시를 개선하자**는 선배의 제안에 어디서부터 무엇을 고쳐야할지 몰라 동공 지진하던 2019년도의 제가 떠올랐습니다.
 {% include figure.html image="https://img.animalplanet.co.kr/news/2019/11/07/700/jt2v590h58s0016316k3.jpg" caption="ㅅ..살려줘.." width="300" %}
 
+이 글은 (1) 동일한 고민 중인 개발자들, 그리고 (2) 2019년도의 저를 위해 작성했습니다.
+
 리팩토링하는 경우는 2가지입니다.  
 
 case 1. 사수의 지시로 특정 모둘을 개선한다.  
@@ -102,6 +104,165 @@ SonarQube 대시보드에 노출될 프로젝트명을 생성합니다.
 터미널에서 프로젝트 repository로 이동한 후, 앞에서 생성한 명령어를 입력해줍니다.
 ![9.png](/assets/images/posts/1/9.png)  
 
+**4.6 분석 결과 확인**  
 분석 종료시 소나큐브 대시보드 (localhost:9000)이 자동으로 새로고침 되면서, 분석 결과가 제공됩니다.  
 각 분석 결과 지표가 의미하는 바는 아래에서 자세히 설명하도록 하겠습니다. 
 ![10.png](/assets/images/posts/1/10.png)  
+
+### 서버에 설치하자
+SonarQube를 설치하는 방법은 (1)Docker를 사용하는 방법, 그리고 (2)시스템에 직접 설치하는 방법이 있습니다. 
+현재 팀에서는 Docker를 사용하고 있지않고, 테스트 단계인 관계로 시스템에 직접 설치했습니다.  
+👉 👉 소나큐브 설치 환경에선 JAVA8을 사용하는 관계로, JAVA8을 지원하는 마지막 버전인 **소나큐브 7.8**을 사용했습니다. (현재 최신 버전: 9.2)
+
+**1.Requirements 설정**  
+설치에 앞서 설치 환경 설정이 필요합니다.
+**❗❗소나큐브 버전에 따라 requirements 값이 다를 수 있습니다. [Prerequisites and Overview](https://docs.sonarqube.org/7.8/requirements/requirements/){:target="_blank"}) 에서 원하는 버전으로 바꾸어 requirement 값을 체크해주세요**  
+
+👉 현재 설정된 값 확인 방법: 아래 명령어 4개 실행  
+```shell
+sysctl vm.max_map_count
+sysctl fs.file-max
+ulimit -n
+ulimit -u
+```
+
+👉 설정된 값이 최소 요구치보다 적을 경우 두가지 방법을 사용하여 수치를 변경할 수 있습니다.  
+1.1 터미널 내 명령어 사용  
+```shell
+sysctl vm.max_map_count=262144
+sysctl fs.file-max=65536
+ulimit -n 65536
+ulimit -u 4096
+```
+
+1.2 별도의 파일에 값 설정  
+❗팀에서는 1.2의 방법을 사용했습니다.❗  
+  *1.2.1 /etc/sysctl.conf*  
+  ![11.png](/assets/images/posts/1/11.png)  
+  *1.2.2 /etc/security/limits.conf*
+  ![12.png](/assets/images/posts/1/12.png)
+
+**2. 서버에 sonarqube 설치**  
+```shell
+# 설치
+wget https://binaries.sonarsource.com/CommercialDistribution/sonarqube-developer/sonarqube-developer-7.8.zip
+# 압축 해제
+unzip sonarqube-developer-7.8.zip
+# 압축 파일 제거
+rm -rf sonarqube-developer-7.8.zip
+``` 
+
+**3. 사용자 추가**  
+sonarqube폴더 관리를 위해 별도의 사용자 추가 필요  
+```shell
+adduser -M -r sonarqube
+```
+
+**4. 폴더 사용자 권한 변경**  
+```shell
+chown -R sonarqube /opt/sonarqube
+```
+
+**5. PostgreSQL 설치**  
+[다운로드 링크](https://www.postgresql.org/download/linux/redhat/){:target="_blank"}에서 
+사용하려는 소나큐브 버전의 requirement 환경에 맞게 설정 값 클릭 후, 자동으로 생성된 script를 서버에서 실행해줍니다.  
+(설정 예시)  
+![13.png](/assets/images/posts/1/13.png)  
+(소나큐브 7.8 버전 기준 스크립트 예시)  
+```shell
+# Install the repository RPM:
+sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+# Install PostgreSQL:
+sudo yum install -y postgresql10-server
+```
+
+**6. PostgreSQL 설정**  
+**6.1 로그인**
+```shell
+su - postgres
+```
+예)  
+![14.png](/assets/images/posts/1/14.png)
+
+**6.2 사용자 생성**
+```shell
+psql
+CREATE USER sonar WITH ENCRYPTED password 'sonar';
+CREATE DATABASE sonar WITH ENCODING 'UTF8' OWNER sonar TEMPLATE=template0;
+```
+예) 
+![15.png](/assets/images/posts/1/15.png)
+
+**6.3 사용자 인증 방식 수정**  
+`/var/lib/pgsql/10/data/pg_hba.conf` 에서 `md5`방식으로 변경  
+![16.png](/assets/images/posts/1/16.png)
+
+**6.4 디비 재기동**
+```shell
+systemctl restart postgresql-10
+```
+
+**7. conf 설정**
+```shell
+vi /opt/sonarqube/conf/sonar.properties
+
+# User credentials.
+sonar.jdbc.username=sonar
+sonar.jdbc.password=sonar
+#----- PostgreSQL 9.3 or greater
+sonar.jdbc.url=jdbc:postgresql://127.0.0.1/sonar
+# OTHERS
+sonar.path.data=/var/sonarqube/data
+sonar.path.temp=/var/sonarqube/temp
+```
+
+**8. 소나큐브 시작**
+```shell
+/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+```
+![17.png](/assets/images/posts/1/17.png)
+
+**9. 소나큐브 서비스 등록**  
+서버 재기동시 자동으로 실행할 수있도록 서비스 등록을 합니다.   
+9.1 `vi /etc/systemd/system/sonarqube.service`  
+9.2 내용 입력
+```shell
+[Unit]
+Description=SonarQube service
+After=syslog.target network.target
+
+[Service]
+Type=forking
+
+User=sonarqube
+Group=sonarqube
+
+ExecStart=/bin/nohup /opt/sonarqube/bin/linux-x86-64/sonar.sh start
+ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+
+LimitNOFILE=65536
+LimitNPROC=8192
+
+RestartSec=120
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+**9.3 서비스 갱신**
+```shell
+sudo systemctl daemon-reload
+```
+
+**9.4 서비스 정상 동작 여부 확인**
+![18.png](/assets/images/posts/1/18.png)
+
+여기까지 끝내셨다면 축하드립니다 (삽질을 끝내고 히죽거리던 과거의 제게도 축하를 보냅니다 흐흐🥂🥂)
+{% include figure.html image="https://mblogthumb-phinf.pstatic.net/20150708_30/vysegirlv_1436362830408tgAwE_JPEG/20140514_150837_80945085.jpg?type=w2" caption="3일간의_삽질_끝에_성공.jpg" width="300" %}
+
+
+## Reference
+* [Linux SonarQube 설치](https://confluence.curvc.com/pages/viewpage.action?pageId=6160585){:target="_blank"}  
+* [Prerequisites and Overview](https://docs.sonarqube.org/7.8/requirements/requirements/){:target="_blank"}  
+* [코드 분석 도구 적용기 - 3편, SonarQube 적용하기](https://seller-lee.github.io/static-code-analysis-part3){:target="_blank"}  
