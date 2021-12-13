@@ -28,7 +28,7 @@ case 2. 알아서 찾아서 고치기
 
 *<center>"꼭 고쳐야하는 코드는 어떤것인가?"</center>*  
 
-제겐 Code smells를 찾는 개코가 없었기에 인공 개코를 찾아나섭니다. 🐶
+제겐 나쁜 코드(=Code smells)를 찾는 개코가 없었기에 인공 개코를 찾아나섭니다. 🐶
 {% include figure.html image="https://t1.daumcdn.net/cfile/tistory/257BEE3A586AA0DB21" caption="언제봐도 귀여운 강아지 코" width="300" %}
 타 회사에서는 어떻게 **코드 개선점**을 발견하고, **코드 퀄리티를 개선**할까?  
 많이 언급되는 방법 중 하나가 '정적 코드 분석 툴' [소나큐브](https://www.sonarqube.org/){:target="_blank"}였습니다.
@@ -258,9 +258,33 @@ sudo systemctl daemon-reload
 **9.4 서비스 정상 동작 여부 확인**
 ![18.png](/assets/images/posts/1/18.png)
 
-여기까지 끝내셨다면 축하드립니다 (삽질을 끝내고 히죽거리던 과거의 제게도 축하를 보냅니다 흐흐🥂🥂)
+여기까지 끝내셨다면 축하드립니다!!💃💃  
+삽질을 끝내고 히죽거리던 과거의 제게도 축하를 보냅니다 흐흐🥂🥂  
 {% include figure.html image="https://mblogthumb-phinf.pstatic.net/20150708_30/vysegirlv_1436362830408tgAwE_JPEG/20140514_150837_80945085.jpg?type=w2" caption="3일간의_삽질_끝에_성공.jpg" width="300" %}
 
+### Jenkins와 연동하기
+저희 팀은 Jenkins로 배포를 하고 있습니다. master에 merge될 때마다 자동으로 SonarQube의 분석이 이뤄지도록 설정을 해보겠습니다. 
+
+**1. SonarQube Scanner for Jenkins 플러그인 설치**  
+`(메뉴)Jenkins 관리 > 플러그인 관리 > 설치 가능 > SonarQube Scanner for Jenkins` 설치  
+![19.png](/assets/images/posts/1/19.png)
+![20.png](/assets/images/posts/1/20.png)
+![21.png](/assets/images/posts/1/21.png)
+
+**2. 소나큐브 서버와 연결**  
+`(메뉴)Jenkins 관리 > 시스템 설정 > 설치 가능 > SonarQube servers` 에서 아래 내용 설정  
+2.1 `Environment variables Enable injection of SonarQube server configuration as build environment variables` 체크    
+2.2 `Name` 작성 (원하시는 이름 적으시면 됩니다. 저는 SonarQube로 설정했습니다.)  
+2.3 Server URL: 소나큐브가 설치된 서버 주소를 적어주세요.  
+2.4 Server authentication token: 서버 접근시 별도의 token이 필요할 경우에만 설정해주시면 됩니다.  
+![22.png](/assets/images/posts/1/22.png)
+![23.png](/assets/images/posts/1/23.png)
+
+**3. SonarQube Scanner 설정**  
+`(메뉴)Jenkins 관리 > Global Tool Configuration > SonarQube Scanner > SonarQube Scanner Installations` 에서 아래 내용 설정  
+(예시에서는 `Install from Maven Central`로 설정하였습니다.)
+![24.png](/assets/images/posts/1/24.png)
+![25.png](/assets/images/posts/1/25.png)
 
 ## Reference
 * [Linux SonarQube 설치](https://confluence.curvc.com/pages/viewpage.action?pageId=6160585){:target="_blank"}  
