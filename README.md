@@ -91,6 +91,7 @@
 - feature_image: 포스팅 최상단에 노출될 이미지를 설정합니다. 
 - feature_text: feature_image의 가운데에 노출될 텍스트를 지정할 수 있습니다.
 - aside: 포스팅 오른쪽에 블로그 소개글을 노출할지 정합니다. (true: 노출, false: 비노출)
+- expert: 포스팅 리스트에 보여질 요약문입니다.
 
 ## 블로그 환경 설정 방법
 ### font 수정
