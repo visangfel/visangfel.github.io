@@ -286,6 +286,51 @@ sudo systemctl daemon-reload
 ![24.png](/assets/images/posts/1/24.png)
 ![25.png](/assets/images/posts/1/25.png)
 
+**4. Jenkins 빌드에 SonarQube 분석 추가**  
+젠킨스 빌드 이후, 빌드 결과에 관계 없이 분석이 진행되도록 설정하겠습니다.  
+4.1 `구성>Post Steps>Add post-build step`에서 `Execute SonarQube Scanner` 클릭.
+![28.png](/assets/images/posts/1/28.png)
+![26.png](/assets/images/posts/1/26.png)
+   
+4.2 `Analysis properties` 설정 (참고: [SonarScanner](https://docs.sonarqube.org/7.8/analysis/scan/sonarscanner/){:target="_blank"}  )
+```shell
+# 프로젝트명
+sonar.projectKey=visangsatae
+
+# path to source directories (required)
+# 소스코드 분석 시작 위치
+sonar.sources=src/main/java
+# 쿨래스 파일 위치
+sonar.java.binaries=target/classes
+# 라이브러리 위치
+sonar.java.libraries=/var/lib/jenkins/.m2/repository
+```
+![27.png](/assets/images/posts/1/27.png)
+
+### gitLab 연결 
+본 예제에서 사용한 visangsatae 프로젝트는 gitLab에서 관리 중입니다.  
+웹훅을 이용하여 gitLab 마스터 브랜치에 merge가 될 때 **자동으로** jenkins 배포 및 SonarQube 분석을 실행하겠습니다.
+1. `Jenkins>프로젝트명>구성>빌드 유발`에서 `Build when a change is pushed to GitLab. GitLab webhook URL...` 체크
+![29.png](/assets/images/posts/1/29.png)
+2. secret token 발행
+`Jenkins>프로젝트명>구성>빌드 유발>고급`에서 Generate 클릭
+![30.png](/assets/images/posts/1/30.png)
+3. 깃랩 프로젝트에 토큰 연결
+`설정>Webhooks>Add Webhooks`에서 토큰 입력
+![31.png](/assets/images/posts/1/31.png)
+4. 설정이 끝난 이후 Test도 가능합니다.
+![32.png](/assets/images/posts/1/31.png)
+   
+## 사용 후기
+이번 포스팅에서는 SonarQube 설치법, Jenkins&GitLab 연동법에 대해 소개해보았습니다. 
+동료들과 함께 소나큐브를 사용하여 코드 개선을 진행, 코드 리뷰를 했을 때, **"왜 이렇게 고쳐야하만 했는지"** 설명하기에 명료해서 좋았습니다. 
+(각 개선 포인트 별로 RULE과 설명을 제공하여 이전의 코드가 안티패턴임을 분명히 인지할 수 있었습니다.)
+물론, 코드의 구조등 사람이 직접 발견해야하는 개선점도 존재하지만, 놓치기 쉬운 취약성등을 소나큐브가 잡아주는것은 분명히 큰 도움이 되었습니다. 
+
+2019년의 제게, 그리고 저와 같은 고민을 했을 많은 주니어 개발자들에게 이 글이 도움이 되었으면 좋겠습니다. 😊
+
+**글에서 보충&수정할 부분은 댓글로 자유롭게 남겨주시면 감사하겠습니다! 긴 글 읽어주셔서 감사합니다.**
+
 ## Reference
 * [Linux SonarQube 설치](https://confluence.curvc.com/pages/viewpage.action?pageId=6160585){:target="_blank"}  
 * [Prerequisites and Overview](https://docs.sonarqube.org/7.8/requirements/requirements/){:target="_blank"}  
