@@ -82,10 +82,13 @@
      drop: true
    ```
 ### TECH 메뉴 작성법
-1. 포스팅은 마크다운 문법으로 작성합니다.  
+1. 포스팅은 _posts 디렉토리 아래 작성일-글ID.md 파일로 만들어주세요.
+   (예. 2021-12-09-1.md는 2021년 12월 9일에 만들어졌으며, 전체 포스팅에서 1번 글입니다.)
+   
+2. 포스팅은 마크다운 문법으로 작성합니다.  
 예) index.md 파일을 작성후 `jekyll serve` 실행시 `_site` 폴더 밑에 index.html이 생성됩니다.
    
-2. 옵션값 ([참고](https://github.com/daviddarnes/alembic#page-and-post-options/))
+3. 옵션값 ([참고](https://github.com/daviddarnes/alembic#page-and-post-options/))
 ![posting-options.png](/assets/images/readme/posting-options.png)
 - title: 브라우저 탭에 노출되는 제목을 설정합니다.  
 - feature_image: 포스팅 최상단에 노출될 이미지를 설정합니다. 
@@ -93,6 +96,19 @@
 - aside: 포스팅 오른쪽에 블로그 소개글을 노출할지 정합니다. (true: 노출, false: 비노출)
 - expert: 포스팅 리스트에 보여질 요약문입니다.
 
+4. 글 내부에 이미지 파일 넣기  
+4.1 이미지 파일 위치  
+   `assets/images/posts/1` 아래에 이미지 넣기 (이미지 번호는 1번부터 시작) 
+   예) `assets/images/posts/1/2.png`  
+    * 더 좋은 규칙이 있을 경우 팀 내에서 논의하여 바꿔주시면 감사하겠습니다.  
+4.2 이미지 파일 넣는법  
+  md 파일 내 아래 2가지 포멧 중 하나 이용하여 삽입  
+  방법 1.   
+  ![1.png](/assets/images/posts/1/1.png)  
+  `![1.png](/assets/images/posts/1/1.png)`  
+  방법 2.  
+  {% include figure.html image="https://2runzzal.com/uploads/zpicture/org/A3qTQbP86P.png" caption="삽질이_모여_실력이_될거야_룰루.jpg" width="300" %}  
+  `{% include figure.html image="https://2runzzal.com/uploads/zpicture/org/A3qTQbP86P.png" caption="삽질이_모여_실력이_될거야_룰루.jpg" width="300" %}`  
 ## 블로그 환경 설정 방법
 ### font 수정
 - _config.xml 내 fonts 수정  
