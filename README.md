@@ -7,7 +7,7 @@
 
 더 많은 이들에게 교육의 기회를 제공하자는 회사의 이념을 확장하여,  
 **"개발자들이 함께 성장할 수 있는 개발 문화"** 를 만들고자 매일 노력합니다.
-![greeting.png](/assets/images/readme/greeting.png)  {: width="450px"}
+![greeting.png](/assets/images/readme/greeting.png)
 
 ## 문서 소개
 본 문서는 Jekyll(정적페이지 생성 툴) 환경설정 & 블로그 포스팅 작성을 안내합니다. 
@@ -21,6 +21,12 @@
   * People
     * 신규 입사자 추가
     * 퇴사자 숨김처리
+  * Tech
+    * 제목 규칙
+    * 포스팅 옵션 설정
+    * 이미지 넣기
+  * contact
+    * 수신자 설정법     
 * 블로그 환경 설정 방법
   * font 수정
   * 유용한 assets
@@ -49,8 +55,11 @@
 - 홈: index.md
 - 404 페이지: 404.md
 ### 메뉴
-- 팀 소개&채용: hire.md
+- 기술 포스팅: index.md
+- 팀원 소개: people.md
+- 팀 개발문화 소개&채용: hire.md
 - 개발팀에 문의하기: contact.md
+  : 블로그방문자가 문의를 남길 경우, 담당자에게 이메일이 발송됩니다.
 - 검색: search.md
 
 ## 포스팅 작성법
@@ -88,7 +97,7 @@
 2. 포스팅은 마크다운 문법으로 작성합니다.  
 예) index.md 파일을 작성후 `jekyll serve` 실행시 `_site` 폴더 밑에 index.html이 생성됩니다.
    
-3. 옵션값 ([참고](https://github.com/daviddarnes/alembic#page-and-post-options/))
+3. 옵션값 ([참고](https://github.com/daviddarnes/alembic#page-and-post-options/))  
 ![posting-options.png](/assets/images/readme/posting-options.png)
 - title: 브라우저 탭에 노출되는 제목을 설정합니다.  
 - feature_image: 포스팅 최상단에 노출될 이미지를 설정합니다. 
@@ -104,12 +113,20 @@
 4.2 이미지 파일 넣는법  
   md 파일 내 아래 2가지 포멧 중 하나 이용하여 삽입  
   방법 1.   
-  ![1.png](/assets/images/posts/1/1.png)  
   `![1.png](/assets/images/posts/1/1.png)`  
   방법 2.  
-  {% include figure.html image="https://2runzzal.com/uploads/zpicture/org/A3qTQbP86P.png" caption="삽질이_모여_실력이_될거야_룰루.jpg" width="300" %}  
-  `{% include figure.html image="https://2runzzal.com/uploads/zpicture/org/A3qTQbP86P.png" caption="삽질이_모여_실력이_될거야_룰루.jpg" width="300" %}`  
+  `{% include figure.html image="https://2runzzal.com/uploads/zpicture/org/A3qTQbP86P.png" caption="삽질이_모여_실력이_될거야_룰루.jpg" width="300" %}` 
+
+### Contact 메뉴 사용법
+외부 방문자가 문의를 남길 경우 담당자에게 이메일이 발송됩니다. 
+* 이메일 발송용 플러그인: [formspree](https://formspree.io/forms) (무료)
+* 수신자 설정법: account > Linked Email Addresses에서 설정 (두명 초과하여 수신 필요할 경우 유로 플랜 사용해야함)
+* 계정: formspree 계정은 현재 leebc@visang.com으로 등록 되어있습니다. 
+
 ## 블로그 환경 설정 방법
+### 메뉴 추가/삭제/수정
+- _config.xml 내에서 navigation_header 수정
+
 ### font 수정
 - _config.xml 내 fonts 수정  
   ![font-setting-1.png](/assets/images/readme/font-setting-1.png)  
