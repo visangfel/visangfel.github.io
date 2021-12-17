@@ -20,7 +20,7 @@ excerpt: 팀 소개
                 </ul>
             </div>
             <div class="group">
-                <div class="group-name">#인프라 #부대장</div>
+                <div class="group-name">#인프라</div>
                 <ul class="member">
                     {% assign members = site.data.members | where: 'group', 'infra' | where_exp: 'member', 'member.drop != true' | sort: 'id' %}
                     {% for member in members %}
